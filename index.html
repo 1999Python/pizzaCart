@@ -1,0 +1,165 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Pizza Cart</title>
+    <script defer src="https://cdn.jsdelivr.net/npm/alpinejs@3.x.x/dist/cdn.min.js"></script>
+    <link rel="stylesheet" href="style.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+
+    <style>
+        body {
+
+            background-image: url("back.jpg");
+            background-color: #cccccc;
+            background-size: cover;
+            margin: 10px;
+        }
+    </style>
+</head>
+
+<body>
+
+    <h1>Perfect Pizza</h1>
+
+    <section id="bill" class="Calculations">
+
+        <table>
+
+
+            <tr>
+                <td>Small</td>
+                <td>
+                    <div x-data="{ small : 0 } ">
+                        <div class="counter" x-text="small"></div>
+                        <div>
+                            <button @click="small++">+</button>
+                            <button @click="small--">-</button>
+                        </div>
+                </td>
+                <td>R<span class="small">0</span> </td>
+            </tr>
+
+            <tr>
+                <td>Medium</td>
+                <td>
+                    <div x-data="{ medium : 0 } ">
+                        <div class="counter" x-text="medium"></div>
+                        <div>
+                            <button @click="medium++">+</button>
+                            <button @click="medium--">-</button>
+                        </div>
+                </td>
+                <td>R<span class="medium">0</span> </td>
+            </tr>
+
+            <tr>
+                <td>Large</td>
+                <td>
+                    <div x-data="{ large : 0 } ">
+                        <div class="counter" x-text="large "></div>
+                        <div>
+                            <button @click="large++">+</button>
+                            <button @click="large--">-</button>
+                        </div>
+                    </div>
+                </td>
+                <td>R<span class="medium">0</span> </td>
+            </tr>
+            <tr>
+                <br>
+                <td>Total Cost</td>
+                <td>R<span class="totalCost">0</span></td>
+            </tr>
+            <br>
+            <tr>
+                <td><label for="PaymentAmount">Payment Amount</label><br><input class="PaymentAmount" value=""
+                        type="number" placeholder="eg. 200.55"></td>
+            </tr>
+            <tr>
+                <td><button>Pay</button></td>
+            </tr>
+
+        </table>
+
+
+
+
+
+    </section>
+
+    <section>
+
+        <div>
+
+            <div class="subsect">
+                <h2 class="subs" style="text-align: center;">Small</h2>
+                <img src="small.png" alt="small" class="smallPz" width="70%">
+
+                <p class="prices">R99</p>
+
+                <p class="para">Danish feta, mature cheddar, parmesan and <br> mozzarella with
+                    braised onion marmalade</p>
+                    <a href="#bill" > <button id="billbtn">Buy Now</button></a>
+            </div>
+
+
+        </div>
+        <br>
+
+        <div>
+
+            <div class="subsect">
+
+                <h2 class="subs" style="text-align: center;">Medium</h2>
+
+                <img src="medium.png" alt="medium" class="mediumPz" width="95%">
+                <br>
+                <p class="prices">R120</p>
+
+                <p class="para">Garlic butter sauce with mozzarella cheese.<br>
+                    Slivers of beef pastrami, pineapple and avocado</p>
+                    <a href="#bill"> <button id="billbtn">Buy Now</button></a>
+            </div>
+         
+        </div>
+
+        <div class="subsect">
+
+            <h2 class="subs" style="text-align: center;">Large</h2>
+
+            <div class="subsect3">
+
+                <img src="large.jpeg" alt="largePz" width="95%">
+                <br>
+                <p class="prices">R179</p>
+
+                <p class="para">Freshly grilled deboned lamb chops on order, coriander and piquante peppers.
+                    <br> Freshly grilled beef fillet on order.
+                    <a href="#bill"> <button id="billbtn">Buy Now</button></a>
+                </p>
+               
+            </div>
+        </div>
+    </section>
+    <br><br><br>
+    <div class="contact">
+
+        <h2 class="order1">Order Now On ! 011 797 6411</h2>
+        <a href="#" class="fa fa-facebook"></a>
+        <a href="#" class="fa fa-twitter"></a>
+        <a href="#" class="fa fa-instagram"></a>
+        <a href="#" class="fa fa-google"></a>
+    </div>
+
+
+
+
+    </div>
+    <br><br>
+</body>
+<footer style="text-align: center;">© Raadiyah Arend Copyright 2023</footer>
+
+</html>
