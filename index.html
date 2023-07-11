@@ -75,8 +75,13 @@
             </tr>
             <br>
             <tr>
-                <td><label for="PaymentAmount">Payment Amount</label><br><input class="PaymentAmount" value=""
-                        type="number" placeholder="eg. 200.55"></td>
+                <div x-data="{ open: false }">
+                    <button @click="open = !open">Checkout</button>
+        
+                    <div x-show="open"><label for="PaymentAmount">Payment Amount</label><br><input class="PaymentAmount" value=""
+                        type="number"></div>
+                </div>
+               
             </tr>
             <tr>
                 <td><button>Pay</button></td>
