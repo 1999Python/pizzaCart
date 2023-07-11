@@ -23,11 +23,12 @@
 <body>
 
     <h1>Perfect Pizza</h1>
-
+   
     <section id="bill" class="Calculations">
-
+       
+       
         <table>
-
+            <tr><td> <h5>Shopping Cart</h5></td></tr>
 
             <tr>
                 <td>Small</td>
@@ -35,10 +36,11 @@
                     <div x-data="{ small : 0 } ">
                         <div class="counter" x-text="small"></div>
                         <div>
-                            <button @click="small++">+</button>
-                            <button @click="small--">-</button>
+                            <button @click="small+= 99">+</button>
+                            <button @click="small-=99">-</button>
                         </div>
                 </td>
+                <br> <br>
                 <td>R<span class="small">0</span> </td>
             </tr>
 
@@ -48,8 +50,8 @@
                     <div x-data="{ medium : 0 } ">
                         <div class="counter" x-text="medium"></div>
                         <div>
-                            <button @click="medium++">+</button>
-                            <button @click="medium--">-</button>
+                            <button @click="medium+=120">+</button>
+                            <button @click="medium-=120">-</button>
                         </div>
                 </td>
                 <td>R<span class="medium">0</span> </td>
@@ -61,8 +63,8 @@
                     <div x-data="{ large : 0 } ">
                         <div class="counter" x-text="large "></div>
                         <div>
-                            <button @click="large++">+</button>
-                            <button @click="large--">-</button>
+                            <button @click="large+=179">+</button>
+                            <button @click="large-=179">-</button>
                         </div>
                     </div>
                 </td>
@@ -86,8 +88,6 @@
                                       Pay
                                     </button>
                                   </div>
-                                
-                              
                     </div>
                 </td>
             </tr>
