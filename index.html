@@ -80,7 +80,14 @@
                         <button @click="open = !open">Checkout</button>
 
                         <div x-show="open"><label for="PaymentAmount">Payment Amount</label><br><input
-                                class="PaymentAmount" value="" type="number"><button>Pay</button></div>
+                                class="PaymentAmount" value="" type="number"><div @notify="alert('You payment has been recieved!')">
+                                    <button
+                                      @click="$dispatch('notify')">
+                                      Pay
+                                    </button>
+                                  </div>
+                                
+                              
                     </div>
                 </td>
             </tr>
