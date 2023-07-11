@@ -98,17 +98,17 @@ section{
   
     background-color: rgb(240, 210, 44);
     margin: auto;
-    padding: 50px;
+    padding: 10px;
     font-size: 2em;
     color: rgb(8, 6, 5);
     width: 500px;
-    height: 450px;
+    height: 650px;
     border: rgb(17, 9, 4) solid 10px;
     }
 
     
     table, td, tr{ 
  
-        
+
        margin: auto;
     }
