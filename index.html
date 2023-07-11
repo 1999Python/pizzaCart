@@ -75,16 +75,17 @@
             </tr>
             <br>
             <tr>
-                <div x-data="{ open: false }">
-                    <button @click="open = !open">Checkout</button>
-        
-                    <div x-show="open"><label for="PaymentAmount">Payment Amount</label><br><input class="PaymentAmount" value=""
-                        type="number"></div>
-                </div>
-               
+                <td>
+                    <div x-data="{ open: false }">
+                        <button @click="open = !open">Checkout</button>
+
+                        <div x-show="open"><label for="PaymentAmount">Payment Amount</label><br><input
+                                class="PaymentAmount" value="" type="number"><button>Pay</button></div>
+                    </div>
+                </td>
             </tr>
             <tr>
-                <td><button>Pay</button></td>
+                
             </tr>
 
         </table>
@@ -107,7 +108,7 @@
 
                 <p class="para">Danish feta, mature cheddar, parmesan and <br> mozzarella with
                     braised onion marmalade</p>
-                    <a href="#bill" > <button id="billbtn">Buy Now</button></a>
+                <a href="#bill"> <button id="billbtn">Buy Now</button></a>
             </div>
 
 
@@ -126,9 +127,9 @@
 
                 <p class="para">Garlic butter sauce with mozzarella cheese.<br>
                     Slivers of beef pastrami, pineapple and avocado</p>
-                    <a href="#bill"> <button id="billbtn">Buy Now</button></a>
+                <a href="#bill"> <button id="billbtn">Buy Now</button></a>
             </div>
-         
+
         </div>
 
         <div class="subsect">
@@ -145,7 +146,7 @@
                     <br> Freshly grilled beef fillet on order.
                     <a href="#bill"> <button id="billbtn">Buy Now</button></a>
                 </p>
-               
+
             </div>
         </div>
     </section>
