@@ -8,7 +8,7 @@
     <script defer src="https://cdn.jsdelivr.net/npm/alpinejs@3.x.x/dist/cdn.min.js"></script>
     <link rel="stylesheet" href="style.css">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
-
+    
     <style>
         body {
 
@@ -23,53 +23,58 @@
 <body>
 
     <h1>Perfect Pizza</h1>
-   
+
     <section id="bill" class="Calculations">
-       
-       
+
+
         <table>
-            <tr><td> <h5>Shopping Cart</h5></td></tr>
+            <tr>
+                <td>
+                    <h5>Shopping Cart</h5>
+                </td>
+            </tr>
 
             <tr>
                 <td>Small</td>
                 <td>
-                    <div x-data="{ small : 0 } ">
-                        <div class="counter" x-text="small"></div>
+                    <div x-data="smallPiz">
+                        <div class="counter" x-text="small">0</div>
                         <div>
-                            <button @click="small+= 99">+</button>
-                            <button @click="small-=99">-</button>
+                            <button @click="increment">+</button>
+                            <button @click="decrement">-</button>
                         </div>
                 </td>
                 <br> <br>
-                <td>R<span class="small">0</span> </td>
+               
             </tr>
 
             <tr>
                 <td>Medium</td>
                 <td>
-                    <div x-data="{ medium : 0 } ">
+                    <div x-data="mediumPiz">
                         <div class="counter" x-text="medium"></div>
                         <div>
-                            <button @click="medium+=120">+</button>
-                            <button @click="medium-=120">-</button>
+                            <button @click="increment">+</button>
+                            <button @click="decrement">-</button>
                         </div>
                 </td>
-                <td>R<span class="medium">0</span> </td>
+             
             </tr>
 
             <tr>
                 <td>Large</td>
                 <td>
-                    <div x-data="{ large : 0 } ">
+                    <div x-data="largePiz ">
                         <div class="counter" x-text="large "></div>
                         <div>
-                            <button @click="large+=179">+</button>
-                            <button @click="large-=179">-</button>
+                            <button @click="increment">+</button>
+                            <button @click="decrement">-</button>
                         </div>
                     </div>
                 </td>
-                <td>R<span class="medium">0</span> </td>
+            
             </tr>
+            <br>  <br>
             <tr>
                 <br>
                 <td>Total Cost</td>
@@ -82,17 +87,17 @@
                         <button @click="open = !open">Checkout</button>
 
                         <div x-show="open"><label for="PaymentAmount">Payment Amount</label><br><input
-                                class="PaymentAmount" value="" type="number"><div @notify="alert('You payment has been recieved!')">
-                                    <button
-                                      @click="$dispatch('notify')">
-                                      Pay
-                                    </button>
-                                  </div>
-                    </div>
+                                class="PaymentAmount" value="" type="number">
+                            <div @notify="alert('You payment has been recieved!')">
+                                <button @click="$dispatch('notify')">
+                                    Pay
+                                </button>
+                            </div>
+                        </div>
                 </td>
             </tr>
             <tr>
-                
+
             </tr>
 
         </table>
@@ -134,7 +139,13 @@
 
                 <p class="para">Garlic butter sauce with mozzarella cheese.<br>
                     Slivers of beef pastrami, pineapple and avocado</p>
-                <a href="#bill"> <button id="billbtn">Buy Now</button></a>
+
+                <div x-data="{ medium : 0 } ">
+                    <div>
+                        <a href="#bill"> <button @click="medium += 120" id="billbtn">Buy Now</button></a>
+                    </div>
+                </div>
+
             </div>
 
         </div>
@@ -171,8 +182,11 @@
 
 
     </div>
+
     <br><br>
+    <script src="index.js"></script>
 </body>
+
 <footer style="text-align: center;">© Raadiyah Arend Copyright 2023</footer>
 
 </html>
