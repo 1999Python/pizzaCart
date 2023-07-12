@@ -1,9 +1,13 @@
 function PizzaCart() {
+
   return {
+
     small: 0,
     medium: 0,
     large: 0,
     amount: 0,
+    pay: 0,
+    errorMessage : '',
 
     incrementSmall() {
       this.small += 99;
@@ -38,6 +42,16 @@ function PizzaCart() {
       }
     },
 
+    payAmount() {
+      if (this.amount === this.pay) {
+        this.errorMessage = 'Enjoy your meal :)';
+        
+      }
+      else if (this.amount !== this.pay) {
+        this.errorMessage = 'Please pay the amount required';
+        
+      }
+    }
 
   }
 }

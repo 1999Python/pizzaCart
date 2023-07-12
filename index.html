@@ -22,27 +22,26 @@
 
 <body>
 
-    <h1>Perfect Pizza</h1>
-
-    <section id="bill" class="Calculations">
+    <h1 id="bill">Perfect Pizza</h1>
 
 
+    <div x-data="cartPizza">
         <table>
             <tr>
                 <td>
-                    <h5>Shopping Cart</h5>
+                    <h3>Shopping Cart</h3>
                 </td>
             </tr>
 
             <tr>
                 <td>Small</td>
                 <td>
-                    <div x-data="cartPizza">
-                        <div class="counter" x-text="small"></div>
-                        <div>
-                            <button @click="incrementSmall">+</button>
-                            <button @click="decrementSmall">-</button>
-                        </div>
+
+                    <div class="counter" x-text="small.toFixed(2)"></div>
+
+                    <button @click="incrementSmall">+</button>
+                    <button @click="decrementSmall">-</button>
+
                 </td>
                 <br> <br>
 
@@ -51,12 +50,17 @@
             <tr>
                 <td>Medium</td>
                 <td>
-                    <div x-data="cartPizza">
-                        <div class="counter" x-text="medium"></div>
-                        <div>
-                            <button @click="incrementMedium">+</button>
-                            <button @click="decrementMedium">-</button>
-                        </div>
+
+                    <div class="counter" x-text="medium.toFixed(2)"></div>
+
+                    <div>
+                        <button @click="incrementMedium">+</button>
+
+                        <button @click="decrementMedium">-</button>
+                    </div>
+
+
+
                 </td>
 
             </tr>
@@ -64,27 +68,24 @@
             <tr>
                 <td>Large</td>
                 <td>
-                    <div x-data="cartPizza">
-                        <div class="counter" x-text="large "></div>
-                        <div>
-                            <button @click="incrementLarge">+</button>
-                            <button @click="decrementLarge">-</button>
-                        </div>
+
+                    <div class="counter" x-text="large.toFixed(2)"></div>
+                    <div>
+                        <button @click="incrementLarge">+</button>
+                        <button @click="decrementLarge">-</button>
                     </div>
+
 
                 </td>
 
             </tr>
             <br> <br>
             <tr>
-                <br>
 
-               
-                <div x-data="cartPizza">
-                    <td>Total Cost</td>
-                    <td>R<span x-text="amount">0</span></td>
 
-                </div>
+                <td>Total Cost</td>
+                <td>R<span x-text="amount.toFixed(2)">0</span></td>
+
             </tr>
             <br>
             <tr>
@@ -96,19 +97,20 @@
                         <div x-show="open"> <label for="PaymentAmount">Payment Amount</label><br><input
                                 class="PaymentAmount" value="" type="number">
 
-                            <div @notify="alert('You payment has been recieved!')">
 
-                                <button @click="$dispatch('notify')">
-                                    Pay
-                                </button>
 
-                            </div>
+                            <button @click="payAmount">
+                                Pay
+                            </button>
+
+
 
                         </div>
 
                     </div>
                 </td>
             </tr>
+
             <tr>
 
             </tr>
@@ -118,86 +120,73 @@
 
 
 
-
-    </section>
-
-    <section>
-
-        <div>
-
-            <div class="subsect">
-                <h2 class="subs" style="text-align: center;">Small</h2>
-                <img src="small.png" alt="small" class="smallPz" width="70%">
-
-                <p class="prices">R99</p>
-
-                <p class="para">Danish feta, mature cheddar, parmesan and <br> mozzarella with
-                    braised onion marmalade</p>
-
-                <div x-data="cartPizza">
-                    <div>
-                        <a href="#bill"> <button @click="incrementSmall">Buy Now</button></a>
-                    </div>
-                </div>
+        <section>
 
 
-            </div>
-
-
-        </div>
-        <br>
-
-        <div>
 
             <div class="subsect">
 
-                <h2 class="subs" style="text-align: center;">Medium</h2>
-
-                <img src="medium.png" alt="medium" class="mediumPz" width="95%">
-                <br>
-                <p class="prices">R120</p>
-
-                <p class="para">Garlic butter sauce with mozzarella cheese.<br>
-                    Slivers of beef pastrami, pineapple and avocado</p>
-
-                <div x-data="cartPizza">
-
-                    <div>
-                        <a href="#bill"> <button @click="incrementMedium">Buy Now</button></a>
+                <div class="polaroid" style="margin-left: 4.5em;">
+                    <img src="small.png" style="width:80%">
+                    <div class="container">
+                        <h2 style="color: rgb(11, 19, 19);">Small <br> R99 <br>Danish feta, mature cheddar, parmesan and
+                            <br> mozzarella with
+                            braised onion marmalade</h2>
+                        <div>
+                            <a href="#bill"> <button @click="incrementSmall">Buy Now</button></a>
+                        </div>
                     </div>
 
                 </div>
 
             </div>
 
-        </div>
-
-        <div class="subsect">
-
-            <h2 class="subs" style="text-align: center;">Large</h2>
-
-            <div class="subsect3">
-
-                <img src="large.jpeg" alt="largePz" width="95%">
-                <br>
-                <p class="prices">R179</p>
-
-                <p class="para">Freshly grilled deboned lamb chops on order, coriander and piquante peppers.
-                    <br> Freshly grilled beef fillet on order.
 
 
-                <div x-data="cartPizza">
-                    <div>
-                        <a href="#bill"> <button @click="incrementLarge">Buy Now</button></a>
+            <br>
+
+
+
+            <div class="subsect">
+
+
+                <div class="polaroid" style="margin-left: 4.5em;">
+                    <img src="medium.png" style="width:100%">
+                    <div class="container">
+                        <h2 style="color: rgb(11, 19, 19);">Medium <br> R120 <br>Garlic butter sauce with mozzarella
+                            cheese.<br>
+                            Slivers of beef pastrami, pineapple and avocado</h2>
+                        <div>
+                            <a href="#bill"> <button @click="incrementMedium">Buy Now</button></a>
+                        </div>
                     </div>
+
                 </div>
 
+            </div>
 
 
-                </p>
+
+            <div class="subsect">
+
+
+                <div class="polaroid" style="margin-left: 4.5em;">
+                    <img src="large.jpeg" style="width:100%">
+
+                    <div class="container">
+                        <h2 style="color: rgb(11, 19, 19);">Large <br> R179 <br>Freshly grilled deboned lamb chops on
+                            order & coriander
+                            <br> Freshly grilled beef fillet
+                        </h2>
+                        <div>
+                            <a href="#bill"> <button @click="incrementLarge">Buy Now</button></a>
+                        </div>
+                    </div>
+
+                </div>
 
             </div>
-        </div>
+    </div>
     </section>
     <br><br><br>
     <div class="contact">

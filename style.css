@@ -20,14 +20,14 @@ section{
     
   margin-left: 1.5em;
   background-color: #a82c03;
-  padding-left: 1.5em;
+  padding-left: 1em;
   padding-right: 1.5em;
   padding-top:1.5em;
   padding-bottom: 1.5em;
   font-size: 0.7em;
   font-family: 'Courier New', Courier, monospace;
   width: 450px;
-  height: 650px;
+  height: 410px;
 }
 #billbtn {
     background-color: #4CAF50;
@@ -94,21 +94,51 @@ section{
     margin-left: 47em;
     
 }
-.Calculations{
-  
-    background-color: rgb(240, 210, 44);
-    margin: auto;
-    padding: 10px;
-    font-size: 2em;
-    color: rgb(8, 6, 5);
-    width: 550px;
-    height: 650px;
-    border: rgb(17, 9, 4) solid 10px;
-    }
 
-    
-    table, td, tr{ 
- 
+table, th, td {
+  background-image: url(fire.jpg);
 
-       margin: auto;
-    }
+  margin-left: 35em;
+  margin-bottom: 10em;
+  font-size: larger;
+  border: 2px solid;
+  padding: 15px;
+  text-align: left;
+  width: 30%;
+  height: 50%;
+}
+
+button {
+  display: inline-block;
+  padding: 1px 15px;
+  font-size: 15px;
+  cursor: pointer;
+  text-align: center;
+  text-decoration: none;
+  outline: none;
+  color: #fff;
+  background-color: #4CAF50;
+  border: none;
+  border-radius: 15px;
+  box-shadow: 0 3px #999;
+}
+
+button:hover {background-color: #3e8e41}
+
+button:active {
+  background-color: #3e8e41;
+  box-shadow: 0 1px #666;
+  transform: translateY(4px);
+}
+
+div.polaroid {
+  width: 80%;
+  background-color: white;
+  box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2), 0 6px 20px 0 rgba(0, 0, 0, 0.19);
+  margin-bottom: 25px;
+}
+
+div.container {
+  text-align: center;
+  padding: 10px 20px;
+}
