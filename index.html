@@ -8,7 +8,7 @@
     <script defer src="https://cdn.jsdelivr.net/npm/alpinejs@3.x.x/dist/cdn.min.js"></script>
     <link rel="stylesheet" href="style.css">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
-    
+
     <style>
         body {
 
@@ -37,48 +37,54 @@
             <tr>
                 <td>Small</td>
                 <td>
-                    <div x-data="smallPiz">
-                        <div class="counter" x-text="small">0</div>
+                    <div x-data="cartPizza">
+                        <div class="counter" x-text="small"></div>
                         <div>
-                            <button @click="increment">+</button>
-                            <button @click="decrement">-</button>
+                            <button @click="incrementSmall">+</button>
+                            <button @click="decrementSmall">-</button>
                         </div>
                 </td>
                 <br> <br>
-               
+
             </tr>
 
             <tr>
                 <td>Medium</td>
                 <td>
-                    <div x-data="mediumPiz">
+                    <div x-data="cartPizza">
                         <div class="counter" x-text="medium"></div>
                         <div>
-                            <button @click="increment">+</button>
-                            <button @click="decrement">-</button>
+                            <button @click="incrementMedium">+</button>
+                            <button @click="decrementMedium">-</button>
                         </div>
                 </td>
-             
+
             </tr>
 
             <tr>
                 <td>Large</td>
                 <td>
-                    <div x-data="largePiz ">
+                    <div x-data="cartPizza">
                         <div class="counter" x-text="large "></div>
                         <div>
-                            <button @click="increment">+</button>
-                            <button @click="decrement">-</button>
+                            <button @click="incrementLarge">+</button>
+                            <button @click="decrementLarge">-</button>
                         </div>
                     </div>
+
                 </td>
-            
+
             </tr>
-            <br>  <br>
+            <br> <br>
             <tr>
                 <br>
-                <td>Total Cost</td>
-                <td>R<span class="totalCost">0</span></td>
+
+               
+                <div x-data="cartPizza">
+                    <td>Total Cost</td>
+                    <td>R<span x-text="amount">0</span></td>
+
+                </div>
             </tr>
             <br>
             <tr>
@@ -86,14 +92,21 @@
                     <div x-data="{ open: false }">
                         <button @click="open = !open">Checkout</button>
 
-                        <div x-show="open"><label for="PaymentAmount">Payment Amount</label><br><input
+
+                        <div x-show="open"> <label for="PaymentAmount">Payment Amount</label><br><input
                                 class="PaymentAmount" value="" type="number">
+
                             <div @notify="alert('You payment has been recieved!')">
+
                                 <button @click="$dispatch('notify')">
                                     Pay
                                 </button>
+
                             </div>
+
                         </div>
+
+                    </div>
                 </td>
             </tr>
             <tr>
@@ -120,7 +133,14 @@
 
                 <p class="para">Danish feta, mature cheddar, parmesan and <br> mozzarella with
                     braised onion marmalade</p>
-                <a href="#bill"> <button id="billbtn">Buy Now</button></a>
+
+                <div x-data="cartPizza">
+                    <div>
+                        <a href="#bill"> <button @click="incrementSmall">Buy Now</button></a>
+                    </div>
+                </div>
+
+
             </div>
 
 
@@ -140,10 +160,12 @@
                 <p class="para">Garlic butter sauce with mozzarella cheese.<br>
                     Slivers of beef pastrami, pineapple and avocado</p>
 
-                <div x-data="{ medium : 0 } ">
+                <div x-data="cartPizza">
+
                     <div>
-                        <a href="#bill"> <button @click="medium += 120" id="billbtn">Buy Now</button></a>
+                        <a href="#bill"> <button @click="incrementMedium">Buy Now</button></a>
                     </div>
+
                 </div>
 
             </div>
@@ -162,7 +184,16 @@
 
                 <p class="para">Freshly grilled deboned lamb chops on order, coriander and piquante peppers.
                     <br> Freshly grilled beef fillet on order.
-                    <a href="#bill"> <button id="billbtn">Buy Now</button></a>
+
+
+                <div x-data="cartPizza">
+                    <div>
+                        <a href="#bill"> <button @click="incrementLarge">Buy Now</button></a>
+                    </div>
+                </div>
+
+
+
                 </p>
 
             </div>
