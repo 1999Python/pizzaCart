@@ -44,12 +44,10 @@ function PizzaCart() {
 
     payAmount() {
       if (this.amount === this.pay) {
-        this.errorMessage = 'Enjoy your meal :)';
-        
+        this.errorMessage = 'Enjoy your meal :)'; 
       }
-      else if (this.amount !== this.pay) {
+      else{
         this.errorMessage = 'Please pay the amount required';
-        
       }
     }
 

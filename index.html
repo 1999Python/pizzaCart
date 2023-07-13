@@ -25,7 +25,7 @@
     <h1 id="bill">Perfect Pizza</h1>
 
 
-<a href="#menu" ><button class="menubtn" style="width: 250px;">Menu</button> </a>
+    <a href="#menu"><button class="menubtn" style="width: 220px;">Menu</button> </a>
 
     <div x-data="cartPizza">
         <table>
@@ -60,9 +60,6 @@
 
                         <button @click="decrementMedium">-</button>
                     </div>
-
-
-
                 </td>
 
             </tr>
@@ -70,16 +67,12 @@
             <tr>
                 <td>Large</td>
                 <td>
-
                     <div class="counter" x-text="large.toFixed(2)"></div>
                     <div>
                         <button @click="incrementLarge">+</button>
                         <button @click="decrementLarge">-</button>
                     </div>
-
-
                 </td>
-
             </tr>
             <br> <br>
             <tr>
@@ -96,25 +89,21 @@
                         <button @click="open = !open">Checkout</button>
 
 
-                        <div x-show="open"> <label for="PaymentAmount">Payment Amount</label><br><input
-                                class="PaymentAmount" value="" type="number">
 
 
+                        <div x-show="open"><label for="PaymentAmount">Payment Amount</label><br><input value=""
+                                type="number">
+                            <div x-text="errorMessage" style="color: red;">
+                             bh
 
+                            </div>
                             <button @click="payAmount">
                                 Pay
                             </button>
-
-
-
                         </div>
-
                     </div>
+
                 </td>
-            </tr>
-
-            <tr>
-
             </tr>
 
         </table>
@@ -133,7 +122,8 @@
                     <div class="container">
                         <h2 style="color: rgb(11, 19, 19);">Small <br> R99 <br>Danish feta, mature cheddar, parmesan and
                             <br> mozzarella with
-                            braised onion marmalade</h2>
+                            braised onion marmalade
+                        </h2>
                         <div>
                             <a href="#bill"> <button @click="incrementSmall">Buy Now</button></a>
                         </div>
